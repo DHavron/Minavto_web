@@ -1,0 +1,107 @@
+/* =========================================================
+   ИП ООО «Минавто» — стили страницы редактора (editor.index)
+   ========================================================= */
+:root{
+  --navy:#0a1f44;
+  --navy-2:#0e2a5c;
+  --blue:#1d5fd6;
+  --blue-dark:#1549ab;
+  --blue-soft:#e8effc;
+  --ink:#0b0e14;
+  --line:#dbe3ef;
+  --bg:#f4f7fc;
+  --text:#22314a;
+  --muted:#5d7089;
+  --white:#fff;
+  --danger:#c0392b;
+  --ok:#1d7a3d;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:15px}
+.container{width:min(1100px,94%);margin-inline:auto}
+a{color:var(--blue-dark);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header редактора */
+.ed-header{background:var(--navy);color:#fff;padding:1rem 0;position:sticky;top:0;z-index:40;box-shadow:0 2px 12px rgba(10,31,68,.3)}
+.ed-header .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.ed-title b{font-size:1.2rem;letter-spacing:.03em}
+.ed-title small{display:block;color:#a9c0ea;font-size:.78rem}
+.ed-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.btn{display:inline-block;border:none;border-radius:6px;padding:.55rem 1.1rem;font-weight:700;font-size:.88rem;cursor:pointer;transition:background .2s;text-decoration:none !important}
+.btn.blue{background:var(--blue);color:#fff}
+.btn.blue:hover{background:var(--blue-dark)}
+.btn.navy{background:var(--navy-2);color:#fff}
+.btn.navy:hover{background:var(--ink)}
+.btn.ghost{background:transparent;color:#cfe0ff;border:1px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn.light{background:#fff;color:var(--navy);border:1px solid var(--line)}
+.btn.light:hover{border-color:var(--blue)}
+.btn.danger{background:var(--danger);color:#fff}
+.btn.danger:hover{background:#96281b}
+.btn.small{padding:.3rem .7rem;font-size:.78rem}
+
+/* Экран пароля */
+.lock{min-height:100vh;display:grid;place-items:center;background:linear-gradient(140deg,var(--ink),var(--navy) 70%)}
+.lock-box{background:#fff;border-radius:12px;padding:2.2rem;width:min(380px,92%);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.lock-box h1{color:var(--navy);font-size:1.3rem;margin-bottom:.4rem}
+.lock-box p{color:var(--muted);font-size:.88rem;margin-bottom:1.2rem}
+.lock-box input{width:100%;padding:.7rem .8rem;border:1px solid #c6d2e2;border-radius:6px;font:inherit;margin-bottom:1rem}
+.lock-box input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,95,214,.18)}
+.lock-err{color:var(--danger);font-size:.85rem;margin-top:.7rem;display:none}
+.lock-hint{font-size:.78rem;color:var(--muted);margin-top:1rem}
+
+/* Вкладки */
+.ed-tabs{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:64px;z-index:30}
+.ed-tabs .container{display:flex;gap:.3rem;overflow-x:auto}
+.ed-tab{background:none;border:none;padding:.85rem 1.1rem;font-weight:700;font-size:.9rem;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.ed-tab:hover{color:var(--navy)}
+.ed-tab.active{color:var(--navy);border-bottom-color:var(--blue)}
+
+/* Панели */
+main{padding:2rem 0 4rem}
+.panel{display:none}
+.panel.active{display:block}
+.block{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.5rem;margin-bottom:1.3rem;box-shadow:0 4px 16px rgba(10,31,68,.06)}
+.block h2{font-size:1.05rem;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.block h2 .tag{font-size:.7rem;background:var(--blue-soft);color:var(--blue-dark);padding:.1rem .6rem;border-radius:10px;font-weight:700}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.82rem;font-weight:600;color:var(--navy-2);margin-bottom:.3rem}
+.field input[type=text],.field textarea,.field select{width:100%;padding:.6rem .7rem;border:1px solid #c6d2e2;border-radius:6px;font:inherit;background:#fff}
+.field textarea{resize:vertical;min-height:70px}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,95,214,.15)}
+.field .hint{font-size:.75rem;color:var(--muted);margin-top:.25rem}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+@media (max-width:760px){.row,.row3{grid-template-columns:1fr}}
+
+/* Список элементов (подпункты) */
+.item{border:1px solid var(--line);border-radius:8px;padding:1rem;margin-bottom:1rem;background:var(--bg)}
+.item-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;gap:.6rem;flex-wrap:wrap}
+.item-head b{color:var(--navy);font-size:.92rem}
+.item-actions{display:flex;gap:.4rem}
+.points textarea{display:block;width:100%;margin-bottom:.4rem;padding:.5rem .6rem;border:1px solid #c6d2e2;border-radius:6px;font:inherit;font-size:.88rem}
+
+/* Пресеты hero-фона */
+.bg-presets{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-bottom:1rem}
+.bg-preset{height:74px;border-radius:8px;border:2px solid var(--line);cursor:pointer;position:relative;overflow:hidden}
+.bg-preset:hover{border-color:var(--blue)}
+.bg-preset.selected{border-color:var(--blue);box-shadow:0 0 0 3px rgba(29,95,214,.25)}
+.bg-preset.selected::after{content:"✓";position:absolute;top:4px;right:6px;color:#fff;font-weight:800;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.bg-preset span{position:absolute;left:0;right:0;bottom:0;background:rgba(11,14,20,.65);color:#fff;font-size:.7rem;padding:.15rem .4rem;text-align:center}
+.upload-row{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap}
+.upload-preview{max-width:220px;border-radius:8px;border:1px solid var(--line);display:none}
+
+/* Сертификаты в редакторе */
+.cert-item{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;border:1px solid var(--line);border-radius:8px;padding:1rem;margin-bottom:1rem;background:var(--bg)}
+.cert-item .full{grid-column:1/-1}
+@media (max-width:760px){.cert-item{grid-template-columns:1fr}}
+
+/* Уведомление о сохранении */
+.toast{position:fixed;bottom:1.2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:.7rem 1.4rem;border-radius:24px;font-size:.9rem;box-shadow:0 8px 24px rgba(0,0,0,.3);opacity:0;transition:all .3s;z-index:90;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.ok{background:var(--ok)}
+.toast.err{background:var(--danger)}
+
+/* Статус-бар */
+.status-bar{font-size:.8rem;color:var(--muted);padding:.6rem 0;text-align:center}
