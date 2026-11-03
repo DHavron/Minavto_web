@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ИП ООО «Минавто» — металлообработка, автокомпоненты, литьё пластмасс | Логойск</title>
+<meta name="description" content="ИП ООО «Минавто» (MINAVTO) — производство и поставка высокоточных деталей для автомобильной промышленности и бытовой техники. Металлообработка, токарные и фрезерные работы, шлифовка, резьбонакатка, штамповка, сборка, литьё пластмасс под давлением. ISO 9001:2015, IATF 16949:2016. г. Логойск, Беларусь.">
+<meta name="keywords" content="металлообработка, Логойск, Минавто, minavto, автокомпоненты, токарные работы, фрезерные работы, шлифовка, резьбонакатка, литье пластмасс, ISO 9001, IATF 16949">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+<style>
+  :root{
+    --steel:#12252f;
+    --steel-2:#1b3644;
+    --accent:#e8871e;
+    --accent-dark:#c56a06;
+    --line:#dfe6ea;
+    --bg:#f5f7f9;
+    --text:#2b3a42;
+    --muted:#6b7d87;
+    --white:#ffffff;
+    --radius:10px;
+    --shadow:0 6px 24px rgba(18,37,47,.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;font-size:16px}
+  img{max-width:100%;display:block}
+  a{color:var(--accent-dark);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{width:min(1160px,92%);margin-inline:auto}
+
+  /* ---------- Top bar ---------- */
+  .topbar{background:var(--steel);color:#cfe0ea;font-size:.85rem;padding:.45rem 0}
+  .topbar .container{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .topbar span{opacity:.85}
+
+  /* ---------- Header ---------- */
+  header.site{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50;box-shadow:0 2px 10px rgba(18,37,47,.06)}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0;gap:1rem}
+  .logo{display:flex;align-items:center;gap:.7rem}
+  .logo-mark{width:46px;height:46px;border-radius:8px;background:linear-gradient(135deg,var(--steel),var(--steel-2));display:grid;place-items:center;color:var(--accent);font-weight:800;font-size:1.35rem;flex:none}
+  .logo-text b{display:block;font-size:1.25rem;letter-spacing:.06em;color:var(--steel);line-height:1.1}
+  .logo-text small{color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+  nav.main{display:flex;gap:1.4rem;font-weight:600;font-size:.95rem}
+  nav.main a{color:var(--steel-2)}
+  nav.main a:hover{color:var(--accent-dark);text-decoration:none}
+  .nav-phone{display:flex;align-items:center;gap:1rem}
+  .nav-phone .tel{font-weight:700;color:var(--steel);white-space:nowrap}
+  .btn{display:inline-block;background:var(--accent);color:#fff !important;font-weight:700;padding:.7rem 1.5rem;border-radius:6px;border:none;cursor:pointer;font-size:.95rem;letter-spacing:.02em;transition:background .2s,transform .1s}
+  .btn:hover{background:var(--accent-dark);text-decoration:none}
+  .btn:active{transform:translateY(1px)}
+  .btn.outline{background:transparent;color:var(--accent) !important;border:2px solid var(--accent)}
+  .btn.outline:hover{background:var(--accent);color:#fff !important}
+  .burger{display:none;background:none;border:none;font-size:1.7rem;color:var(--steel);cursor:pointer;line-height:1}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;color:#fff;padding:5.5rem 0 5rem;background:
+      linear-gradient(100deg,rgba(18,37,47,.94) 0%,rgba(27,54,68,.85) 55%,rgba(27,54,68,.55) 100%),
+      repeating-linear-gradient(45deg,#233d4b 0 12px,#1b3644 12px 24px);}
+  .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:linear-gradient(90deg,var(--accent),transparent)}
+  .hero h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.15;margin-bottom:1.1rem;max-width:720px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p.lead{max-width:640px;font-size:1.08rem;color:#dbe7ee;margin-bottom:2rem}
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+  .hero-badges{display:flex;gap:1.2rem;flex-wrap:wrap;margin-top:2.6rem}
+  .badge{border:1px solid rgba(255,255,255,.28);border-radius:8px;padding:.6rem 1rem;font-size:.85rem;background:rgba(255,255,255,.07)}
+  .badge b{display:block;font-size:1rem;color:var(--accent)}
+
+  /* ---------- Sections ---------- */
+  section{padding:4.2rem 0}
+  .section-head{margin-bottom:2.4rem}
+  .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:.78rem;font-weight:700;color:var(--accent);margin-bottom:.4rem}
+  h2{font-size:clamp(1.5rem,3vw,2.1rem);color:var(--steel);line-height:1.2}
+  .sub{color:var(--muted);max-width:720px;margin-top:.6rem}
+
+  /* Advantages strip */
+  .strip{background:var(--white);border-bottom:1px solid var(--line);padding:2.2rem 0}
+  .strip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.5rem;text-align:center}
+  .strip-item b{display:block;font-size:1.9rem;color:var(--accent);line-height:1.1}
+  .strip-item span{font-size:.9rem;color:var(--muted)}
+
+  /* Cards */
+  .grid{display:grid;gap:1.4rem}
+  .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .grid.cols-4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:var(--shadow);transition:transform .18s,border-color .18s}
+  .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+  .card .icon{width:52px;height:52px;border-radius:8px;background:#fdf1e2;display:grid;place-items:center;font-size:1.5rem;margin-bottom:1rem}
+  .card h3{font-size:1.1rem;color:var(--steel);margin-bottom:.5rem}
+  .card p{font-size:.93rem;color:var(--muted)}
+
+  /* Services list */
+  .svc-list{list-style:none;margin-top:.6rem}
+  .svc-list li{position:relative;padding-left:1.3rem;font-size:.9rem;color:var(--text);margin-bottom:.35rem}
+  .svc-list li::before{content:"";position:absolute;left:0;top:.55rem;width:8px;height:8px;background:var(--accent);border-radius:2px;transform:rotate(45deg)}
+
+  /* About */
+  .about{background:var(--white)}
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:start}
+  .about p{margin-bottom:1rem}
+  blockquote{border-left:4px solid var(--accent);background:var(--bg);padding:1.1rem 1.3rem;border-radius:0 8px 8px 0;font-style:italic;color:var(--steel-2);margin:1.4rem 0}
+  .cert{display:flex;gap:1rem;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:1.1rem 1.3rem;margin-bottom:1rem}
+  .cert .seal{flex:none;width:54px;height:54px;border-radius:50%;background:var(--steel);color:var(--accent);display:grid;place-items:center;font-weight:800;font-size:.72rem;text-align:center;border:3px double var(--accent)}
+  .cert b{display:block;color:var(--steel)}
+  .cert small{color:var(--muted)}
+
+  /* Applications */
+  .apps{background:linear-gradient(180deg,var(--steel) 0%,var(--steel-2) 100%);color:#e8eff4}
+  .apps h2{color:#fff}
+  .apps .sub{color:#b8cad6}
+  .app-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius);padding:1.5rem;text-align:center}
+  .app-card .icon{font-size:2rem;margin-bottom:.6rem}
+  .app-card b{display:block;color:#fff;margin-bottom:.35rem}
+  .app-card span{font-size:.88rem;color:#b8cad6}
+
+  /* Process / steps */
+  .steps{counter-reset:step;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.4rem}
+  .step{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.5rem;position:relative}
+  .step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:1.3rem;width:34px;height:34px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:1rem}
+  .step h3{margin:.5rem 0 .4rem;font-size:1.02rem;color:var(--steel)}
+  .step p{font-size:.88rem;color:var(--muted)}
+
+  /* Contacts */
+  .contacts{background:var(--white)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+  .info-table{width:100%;border-collapse:collapse}
+  .info-table th,.info-table td{text-align:left;padding:.7rem .5rem;border-bottom:1px solid var(--line);vertical-align:top;font-size:.95rem}
+  .info-table th{color:var(--muted);font-weight:600;width:38%;white-space:nowrap}
+  .info-table td{color:var(--steel)}
+  form.callback{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem}
+  form.callback h3{color:var(--steel);margin-bottom:1rem}
+  .field{margin-bottom:1rem}
+  .field label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.35rem;color:var(--steel-2)}
+  .field input,.field textarea{width:100%;padding:.7rem .8rem;border:1px solid #c6d2da;border-radius:6px;font:inherit;background:#fff}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(232,135,30,.18)}
+  .form-note{font-size:.78rem;color:var(--muted);margin-top:.7rem}
+  .map-frame{margin-top:2.5rem;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .map-frame iframe{width:100%;height:420px;border:0;display:block}
+
+  /* Footer */
+  footer.site{background:var(--steel);color:#a9bfcd;padding:3rem 0 1.5rem;font-size:.9rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
+  footer h4{color:#fff;font-size:1rem;margin-bottom:.8rem}
+  footer ul{list-style:none}
+  footer li{margin-bottom:.45rem}
+  footer a{color:#a9bfcd}
+  footer a:hover{color:var(--accent)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:1.2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem;color:#7f97a6}
+
+  /* Scroll top */
+  .to-top{position:fixed;right:1.2rem;bottom:1.2rem;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.2rem;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:var(--shadow);z-index:60}
+  .to-top.show{opacity:1;pointer-events:auto}
+
+  /* Responsive */
+  @media (max-width:900px){
+    nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--white);flex-direction:column;padding:1rem 4%;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+    nav.main.open{display:flex}
+    .burger{display:block}
+    .nav-phone .btn{display:none}
+    .about-grid,.contact-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:560px){
+    .hero{padding:3.5rem 0 3rem}
+    .foot-grid{grid-template-columns:1fr}
+    section{padding:3rem 0}
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <span>📍 223141, Республика Беларусь, Минская обл., г. Логойск, ул. Минская, 2В</span>
+    <span>🕘 Пн–Пт 9:00–18:00 &nbsp;|&nbsp; Член группы KAP Precision Components с 2000 года</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site">
+  <div class="container nav-wrap">
+    <a href="#top" class="logo" aria-label="Минавто — на главную">
+      <span class="logo-mark">M</span>
+      <span class="logo-text"><b>МИНАВТО</b><small>ИП ООО · Metal &amp; Plastics</small></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Открыть меню">☰</button>
+    <nav class="main" id="menu">
+      <a href="#o-kompanii">О компании</a>
+      <a href="#uslugi">Услуги</a>
+      <a href="#produkciya">Продукция</a>
+      <a href="#process">Как работаем</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="nav-phone">
+      <a class="tel" href="tel:+375177455377">+375 (17) 745-53-77</a>
+      <a class="btn" href="#kontakty">Запросить расчёт</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="container">
+    <p class="kicker">MINAVTO · Металлообработка · Сборка · Литьё пластмасс</p>
+    <h1>Высокоточные детали для <em>автомобильной промышленности</em> и бытовой техники</h1>
+    <p class="lead">
+      ИП ООО «Минавто» — производитель и поставщик прецизионных комплектующих для рынков
+      Западной Европы и стран Таможенного союза. Мы готовы самостоятельно разработать продукт
+      и процесс с их последующим внедрением в серийное производство — от чертежа до поставки.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#uslugi">Наши услуги</a>
+      <a class="btn outline" href="#kontakty">Связаться с отделом сбыта</a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge"><b>ISO 9001:2015</b>сертификация DQS ежегодно с 2004 года</div>
+      <div class="badge"><b>IATF 16949:2016</b>автомобильный стандарт с 2018 года</div>
+      <div class="badge"><b>с 2000 года</b>в составе немецкой группы KAP Precision Components</div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS STRIP -->
+<div class="strip">
+  <div class="container strip-grid">
+    <div class="strip-item"><b>20+</b><span>лет в составе группы KAP Precision Components</span></div>
+    <div class="strip-item"><b>2004</b><span>году система качества подтверждается ISO 9001 ежегодно</span></div>
+    <div class="strip-item"><b>2</b><span>рынка поставки: Западная Европа и Таможенный союз</span></div>
+    <div class="strip-item"><b>3</b><span>направления: металлообработка, сборка, пластмассы</span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="o-kompanii">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">О компании</p>
+      <h2>ИП ООО «Минавто» — часть крупной немецкой производственной группы</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>
+          Компания ИП ООО «Минавто» входит в состав крупной немецкой производственной группы
+          <strong>KAP Precision Components</strong> с 2000 года. Область работы холдинга охватывает такие
+          направления, как автомобильная промышленность, медицина, бытовая техника, компоненты для
+          приводных систем и альтернативная энергетика.
+        </p>
+        <p>
+          Наше предприятие расположено в городе <strong>Логойск</strong> (Минская область) и является
+          производителем и поставщиком высокоточных деталей для автомобильной промышленности
+          и бытовой техники на рынках Западной Европы и стран Таможенного союза.
+        </p>
+        <p>
+          Высококвалифицированные специалисты способны удовлетворить требования самых взыскательных
+          заказчиков, реализовывая проекты любой сложности в таких областях, как металлообработка,
+          сборка и литьё пластмасс. Команда «Минавто» готова для Вас самостоятельно разработать продукт
+          и процесс с их последующим внедрением в серийное производство.
+        </p>
+        <blockquote>
+          «Услугами, которые мы оказываем, мы хотим и дальше укреплять конкурентоспособность наших
+          заказчиков на рынке». Создание конкурентоспособной, качественной продукции, отвечающей
+          требованиям и ожиданиям потребителей, — главная цель ИП ООО «Минавто».
+        </blockquote>
+      </div>
+      <aside>
+        <div class="cert">
+          <div class="seal">DQS</div>
+          <div>
+            <b>ISO 9001:2015</b>
+            <small>Соответствие системы менеджмента качества ежегодно подтверждается аккредитованным
+            органом по сертификации DQS начиная с 2004 года.</small>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="seal">IATF</div>
+          <div>
+            <b>IATF 16949:2016</b>
+            <small>Международный стандарт систем менеджмента качества в автомобильной отрасли —
+            сертифицированы с 2018 года.</small>
+          </div>
+        </div>
+        <div class="cert">
+          <div class="seal">KAP</div>
+          <div>
+            <b>KAP Precision Components</b>
+            <small>Немецкая производственная группа: автомобилестроение, медицина, бытовая техника,
+            приводные системы, альтернативная энергетика.</small>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="uslugi">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Услуги компании</p>
+      <h2>Металлообработка, сборка и литьё пластмасс</h2>
+      <p class="sub">Производим комплектующие для автомобильной промышленности стран Западной Европы
+      и Таможенного союза. Обрабатываем детали из стали, чугуна, алюминия и цветных металлов по чертежам
+      и образцам заказчика.</p>
+    </div>
+
+    <div class="grid cols-3">
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Механическая обработка металлов</h3>
+        <p>Полный цикл обработки резанием на современном станочном парке:</p>
+        <ul class="svc-list">
+          <li>Токарные работы, в том числе на станках с ЧПУ</li>
+          <li>Фрезерная обработка металла</li>
+          <li>Сверление, зенкерование, растачивание</li>
+          <li>Шлифовка металла (круглая и плоская)</li>
+          <li>Изготовление валов, шестерён, шкивов</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">🔩</div>
+        <h3>Пластическая деформация и соединения</h3>
+        <p>Технологии для серийного выпуска крепёжных и ответственных деталей:</p>
+        <ul class="svc-list">
+          <li>Резьбонакатывание металла</li>
+          <li>Штамповка и холодная высадка</li>
+          <li>Гибка и слесарно-сварочные работы</li>
+          <li>Термическая и поверхностная обработка</li>
+          <li>Обезжиривание, мойка и консервация деталей</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">🧪</div>
+        <h3>Литьё пластмасс под давлением</h3>
+        <p>Производство корпусов, кронштейнов и элементов систем из полимерных материалов:</p>
+        <ul class="svc-list">
+          <li>Литьё пластмасс под давлением</li>
+          <li>Изготовление резиновых и пластмассовых изделий</li>
+          <li>Оснастка и пресс-формы</li>
+          <li>Подбор материала под условия эксплуатации</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">🏗️</div>
+        <h3>Сборка узлов и изделий</h3>
+        <p>Автоматизированная и ручная сборка комплектующих, в том числе многосоставных узлов:</p>
+        <ul class="svc-list">
+          <li>Сборка изделий из пластмассы и металла</li>
+          <li>Ультразвуковая сварка пластмасс</li>
+          <li>Комплектация и упаковка под поставки конвейера</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">📐</div>
+        <h3>Разработка продукта и процесса</h3>
+        <p>Инженерное сопровождение проекта с нуля:</p>
+        <ul class="svc-list">
+          <li>Разработка продукта и техпроцесса с последующим внедрением в серию</li>
+          <li>Работа по проекту заказчика любой сложности</li>
+          <li>Учёт всех требований или предложение нашего решения задачи</li>
+          <li>Контроль качества и PPAP-документация</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="icon">🚚</div>
+        <h3>Поставки и логистика</h3>
+        <p>Стабильные серийные поставки для промышленных предприятий:</p>
+        <ul class="svc-list">
+          <li>Экспорт в страны Западной Европы</li>
+          <li>Поставки на рынок Республики Беларусь и Таможенного союза</li>
+          <li>Оптовая продажа автокомпонентов</li>
+          <li>График отгрузок под потребности заказчика</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS / APPLICATIONS -->
+<section class="apps" id="produkciya">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Продукция и отрасли</p>
+      <h2>Что мы производим и для кого</h2>
+      <p class="sub">Высокие требования к точности и чистоте поверхности обусловлены отраслями,
+      для которых работает предприятие.</p>
+    </div>
+    <div class="grid cols-4">
+      <div class="app-card">
+        <div class="icon">🚗</div>
+        <b>Автокомпоненты</b>
+        <span>Детали и узлы для автомобильной промышленности, в том числе системы
+        омывания лобовых стёкол, валы, шестерни, шкивы</span>
+      </div>
+      <div class="app-card">
+        <div class="icon">🏠</div>
+        <b>Бытовая техника</b>
+        <span>Прецизионные детали и пластмассовые элементы для производителей
+        домашней техники</span>
+      </div>
+      <div class="app-card">
+        <div class="icon">⚙️</div>
+        <b>Приводные системы</b>
+        <span>Компоненты для приводных систем и промышленного оборудования</span>
+      </div>
+      <div class="app-card">
+        <div class="icon">💡</div>
+        <b>Альтернативная энергетика и медицина</b>
+        <span>Направления группы KAP Precision Components, в проектах которых
+        участвует предприятие</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Как мы работаем</p>
+      <h2>От заявки до серийной поставки</h2>
+      <p class="sub">Наш квалифицированный персонал готов взяться за реализацию Вашего проекта любой
+      сложности — с учётом всех Ваших требований или с предложением собственного решения.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <h3>Заявка и чертёж</h3>
+        <p>Вы направляете запрос с чертежом, 3D-моделью или образцом детали. Отдел сбыта уточняет
+        объём серии и требования.</p>
+      </div>
+      <div class="step">
+        <h3>Расчёт и техпроцесс</h3>
+        <p>Инженеры оценивают технологичность, предлагают оптимальный маршрут обработки и дают
+        коммерческое предложение со сроками.</p>
+      </div>
+      <div class="step">
+        <h3>Опытный образец</h3>
+        <p>Изготавливаем и контролируем первый образец, согласуем документацию и при необходимости
+        корректируем процесс.</p>
+      </div>
+      <div class="step">
+        <h3>Серия и поставки</h3>
+        <p>Осваиваем серийное производство, обеспечиваем входной и выходной контроль по стандартам
+        ISO 9001 / IATF 16949 и регулярные отгрузки.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="contacts" id="kontakty">
+  <div class="container">
+    <div class="section-head">
+      <p class="kicker">Контакты</p>
+      <h2>Свяжитесь с нами</h2>
+      <p class="sub">Будем рады обсудить Ваш проект. Для запросов по поставкам материалов и по
+      приобретению продукции используйте соответствующие отделы.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <table class="info-table">
+          <tr><th>Наименование</th><td>ИП ООО «Минавто» (MINAVTO)</td></tr>
+          <tr><th>Адрес</th><td>223141, Республика Беларусь, Минская обл., г. Логойск, ул. Минская, 2В</td></tr>
+          <tr><th>Телефон</th><td><a href="tel:+375177455377">+375 (17) 745-53-77</a></td></tr>
+          <tr><th>Отдел сбыта</th><td><a href="tel:+375445464873">+375 (44) 546-48-73</a></td></tr>
+          <tr><th>Отдел закупок</th><td><a href="tel:+375291279900">+375 (29) 127-99-XX</a></td></tr>
+          <tr><th>Помощник директора</th><td><a href="tel:+375447893129">+375 (44) 789-31-29</a></td></tr>
+          <tr><th>E-mail</th><td><a href="mailto:tatyana.plyuto@minavto.by">tatyana.plyuto@minavto.by</a></td></tr>
+          <tr><th>Сайт</th><td><a href="https://minavto.by">minavto.by</a></td></tr>
+          <tr><th>УНП</th><td>800007353</td></tr>
+          <tr><th>Режим работы</th><td>Пн–Пт 9:00–18:00, без обеда; Сб, Вс — выходной</td></tr>
+          <tr><th>Направления</th><td>Металлообработка · Литьё пластмасс под давлением · Сборка ·
+          Изготовление автомобильных комплектующих</td></tr>
+        </table>
+      </div>
+
+      <form class="callback" id="cb-form" novalidate>
+        <h3>Запросить коммерческое предложение</h3>
+        <div class="field">
+          <label for="f-name">Ваше имя *</label>
+          <input id="f-name" name="name" type="text" required placeholder="Иван Иванов">
+        </div>
+        <div class="field">
+          <label for="f-company">Организация</label>
+          <input id="f-company" name="company" type="text" placeholder="Название предприятия">
+        </div>
+        <div class="field">
+          <label for="f-phone">Телефон *</label>
+          <input id="f-phone" name="phone" type="tel" required placeholder="+375 (__) ___-__-__">
+        </div>
+        <div class="field">
+          <label for="f-msg">Опишите задачу *</label>
+          <textarea id="f-msg" name="message" rows="4" required
+            placeholder="Деталь, материал, серия, требуемые сроки…"></textarea>
+        </div>
+        <button class="btn" type="submit">Отправить запрос</button>
+        <p class="form-note">* — обязательные поля. Форма демонстрационная: данные отправляются
+        только после подключения серверного обработчика или сервиса форм.</p>
+      </form>
+    </div>
+
+    <div class="map-frame">
+      <iframe title="Расположение ИП ООО «Минавто» — г. Логойск, ул. Минская, 2В"
+        loading="lazy" referrerpolicy="origin"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=28.020%2C54.180%2C28.075%2C54.215&layer=mapnik&marker=54.1975%2C28.0475">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>ИП ООО «Минавто»</h4>
+        <p>Производитель и поставщик высокоточных деталей для автомобильной промышленности
+        и бытовой техники. Металлообработка, сборка, литьё пластмасс под давлением.
+        Член немецкой производственной группы KAP Precision Components.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="#o-kompanii">О компании</a></li>
+          <li><a href="#uslugi">Услуги</a></li>
+          <li><a href="#produkciya">Продукция</a></li>
+          <li><a href="#process">Как работаем</a></li>
+          <li><a href="#kontakty">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li>223141, г. Логойск, ул. Минская, 2В</li>
+          <li><a href="tel:+375177455377">+375 (17) 745-53-77</a></li>
+          <li><a href="tel:+375445464873">Отдел сбыта: +375 (44) 546-48-73</a></li>
+          <li><a href="mailto:tatyana.plyuto@minavto.by">tatyana.plyuto@minavto.by</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> ИП ООО «Минавто» · MINAVTO. Все права защищены.</span>
+      <span>УНП 800007353 · ISO 9001:2015 · IATF 16949:2016</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+<script>
+  // Mobile menu
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => menu.classList.toggle('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  // Scroll-to-top button
+  const toTop = document.getElementById('toTop');
+  addEventListener('scroll', () => toTop.classList.toggle('show', scrollY > 500), {passive:true});
+  toTop.addEventListener('click', () => scrollTo({top:0, behavior:'smooth'}));
+
+  // Current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Demo form handler
+  document.getElementById('cb-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    const f = e.target;
+    if (!f.name.value.trim() || !f.phone.value.trim() || !f.message.value.trim()){
+      alert('Пожалуйста, заполните обязательные поля: имя, телефон и описание задачи.');
+      return;
+    }
+    alert('Спасибо, ' + f.name.value.trim() + '! Ваш запрос зарегистрирован.\n' +
+          'Отдел сбыта свяжется с вами по телефону ' + f.phone.value.trim() + '.\n\n' +
+          '(Демонстрационный режим: подключите серверный обработчик форм для реальной отправки.)');
+    f.reset();
+  });
+</script>
+</body>
+</html>
